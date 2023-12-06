@@ -1,0 +1,37 @@
+{
+    "companyInfo": [
+      {
+        "id": 1,
+        "name": "Liftmash",
+        "location": "Mogilev, Belarus",
+        "establishedYear": 1976,
+        "industry": "Elevator Manufacturing",
+        "employees": 500,
+        "revenue": "$100 million",
+        "website": "https://www.liftmash.com",
+        "description": "Liftmash is a leading elevator manufacturing company based in Moscow, Russia. With over 45 years of experience in the industry, Liftmash has gained a reputation for delivering high-quality and innovative elevator solutions. The company employs a team of 500 professionals and operates in both domestic and international markets. Liftmash's products are known for their reliability, safety, and cutting-edge technology. The company's commitment to customer satisfaction and continuous improvement has made it a trusted choice for clients worldwide."
+      },
+      {
+        "id": 2,
+        "name": "Google",
+        "location": "Mountain View, CA, USA",
+        "establishedYear": 1998,
+        "industry": "Technology",
+        "employees": 139995,
+        "revenue": "$182.5 billion",
+        "website": "https://www.google.com",
+        "description": "Google is a multinational technology company headquartered in Mountain View, California, USA. Founded in 1998, Google has become one of the world's most renowned technology companies. With a workforce of nearly 140,000 employees, Google offers a wide range of products and services, including search engines, online advertising technologies, cloud computing, software, and hardware. Google's mission is to organize the world's information and make it universally accessible and useful."
+      },
+      {
+        "id": 3,
+        "name": "Apple",
+        "location": "Cupertino, CA, USA",
+        "establishedYear": 1976,
+        "industry": "Technology",
+        "employees": 147000,
+        "revenue": "$274.5 billion",
+        "website": "https://www.apple.com",
+        "description": "Apple Inc. is a multinational technology company based in Cupertino, California, USA. Founded in 1976, Apple is known for designing, manufacturing, and selling consumer electronics, software, and online services. The company's iconic products include the iPhone, iPad, Mac, Apple Watch, and AirPods. With a workforce of approximately 147,000 employees, Apple continues to innovate and create products that redefine the way we use technology. Apple's commitment to excellence, design, and user experience has made it a leading brand in the global technology industry."
+      }
+    ]
+  }

@@ -1,0 +1,14 @@
+.navigation {
+    display: flex;
+    gap: 25px;
+}
+
+.navigationLink {
+    font-size: 22px;
+    text-decoration: none;
+    color: #565656;
+}
+
+.navigationLink:hover {
+    text-decoration: underline;
+}

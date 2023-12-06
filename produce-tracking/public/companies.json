@@ -1,0 +1,16 @@
+{
+    "companies": [
+      {
+        "id": 1,
+        "name": "Liftmash"
+      },
+      {
+        "id": 2,
+        "name": "Google"
+      },
+      {
+        "id": 3,
+        "name": "Apple Inc."
+      }
+    ]
+  }

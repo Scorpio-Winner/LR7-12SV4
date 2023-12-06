@@ -1,0 +1,21 @@
+.orderDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.title {
+    align-self: center;
+    font-size: 26px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail {
+    width: 370px;
+    font-size: 18px;
+}

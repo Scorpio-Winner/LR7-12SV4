@@ -1,0 +1,21 @@
+.form {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 50%;
+    background-color: white;
+}
+
+.formHeader {
+    align-self: center;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

@@ -1,0 +1,33 @@
+.order {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.orderInfo {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.orderId, .orderTitle, .orderStatus, .orderButtons {
+    font-size: 20px;
+    color: black;
+}
+
+.orderId {
+    width: 10px;
+}
+
+.orderTitle {
+    width: 200px;
+}
+
+.orderButtons {
+    display: flex;
+    gap: 5px;
+}
