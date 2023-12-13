@@ -1,89 +1,94 @@
-import mongoose from 'mongoose'; 
-const express = require('express');
-const bodyParser = require('body-parser');
-const mongodb = require('mongodb');
+import express from "express";
+/*import fs from "fs";
+import multer from "multer";
+import cors from "cors";*/
+import mongoose from "mongoose";
 
+/*import {
+  registerValidation,
+  loginValidation,
+} from "./validations.js";*/
 
-mongoose 
-    .connect('mongodb+srv://admin:scorpio857@cluster0.duigrhl.mongodb.net/')
-    .then(() => console.log('DB OK'))
-    .catch((err) => console.log('DB ERROR', err)); 
+/*import { handleValidationErrors, checkAuth } from "./utils/index.js";
+*/
+import {
+  CompanyInfoController,
+  OrdersController,
+  OrderStatusesController,
+  UserController,
+} from "./controllers/index.js";
 
+mongoose
+  .connect("mongodb+srv://admin:daniilscorpio857@cluster0.duigrhl.mongodb.net/ProduceTracking")
+  .then(() => console.log("DB ok"))
+  .catch((err) => console.log("DB error", err));
 
 const app = express();
-const port = 3000;
 
-// Подключение к базе данных MongoDB
-const MongoClient = mongodb.MongoClient;
-const url = 'mongodb://localhost:27017';
-const dbName = 'mydatabase';
-let db;
+/*const storage = multer.diskStorage({
+  destination: (_, __, cb) => {
+    if (!fs.existsSync("uploads")) {
+      fs.mkdirSync("uploads");
+    }
+    cb(null, "uploads");
+  },
+  filename: (_, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
 
-MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
+const upload = multer({ storage });
+
+app.use(express.json());
+app.use(cors());
+app.use("/uploads", express.static("uploads"));
+
+/* User Routes
+app.post(
+  "/auth/register",
+  registerValidation,
+  handleValidationErrors,
+  UserController.register
+);
+app.post(
+  "/auth/login",
+  loginValidation,
+  handleValidationErrors,
+  UserController.login
+);
+app.get("/auth/me", checkAuth, UserController.getMe); */
+
+// Company Info Routes
+app.get("/companyinfo", CompanyInfoController.getAllCompanyInfo);
+app.get("/companyinfo/:id", CompanyInfoController.getCompanyInfoById);
+app.post("/companyinfo", CompanyInfoController.createCompanyInfo);
+app.put("/companyinfo/:id", CompanyInfoController.updateCompanyInfo);
+app.delete("/companyinfo/:id", CompanyInfoController.deleteCompanyInfo);
+
+// Order Routes
+app.get("/orders", OrdersController.getAllOrders);
+app.get("/orders/:id", OrdersController.getOrderById);
+app.post("/orders", OrdersController.createOrder);
+app.put("/orders/:id", OrdersController.updateOrder);
+app.delete("/orders/:id", OrdersController.deleteOrder);
+
+// Order Status Routes
+app.get("/orderstatuses", OrderStatusesController.getAllOrderStatuses);
+app.get("/orderstatuses/:id", OrderStatusesController.getOrderStatusById);
+app.post("/orderstatuses", OrderStatusesController.createOrderStatus);
+app.put("/orderstatuses/:id", OrderStatusesController.updateOrderStatus);
+app.delete("/orderstatuses/:id", OrderStatusesController.deleteOrderStatus);
+/*
+app.post("/upload", checkAuth, upload.single("image"), (req, res) => {
+  res.json({
+    url: `/uploads/${req.file.originalname}`,
+  });
+});
+*/
+app.listen(process.env.PORT || 4444, (err) => {
   if (err) {
-    console.error(err);
-    return;
+    return console.log(err);
   }
-  console.log('Connected to MongoDB');
-  db = client.db(dbName);
-});
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-// Маршруты API
-
-// Получить все компании
-app.get('/companies', (req, res) => {
-  db.collection('companyInfo').find().toArray((err, result) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Internal Server Error');
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-// Получить все заказы
-app.get('/orders', (req, res) => {
-  db.collection('orders').find().toArray((err, result) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Internal Server Error');
-    } else {
-      res.send(result);
-    }
-  });
-});
-
-// Создать новую компанию
-app.post('/companies', (req, res) => {
-  const company = req.body;
-  db.collection('companyInfo').insertOne(company, (err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Internal Server Error');
-    } else {
-      res.send('Company created successfully');
-    }
-  });
-});
-
-// Создать новый заказ
-app.post('/orders', (req, res) => {
-  const order = req.body;
-  db.collection('orders').insertOne(order, (err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Internal Server Error');
-    } else {
-      res.send('Order created successfully');
-    }
-  });
-});
-
-// Запустить сервер
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+  console.log("Server OK");
+}); 
