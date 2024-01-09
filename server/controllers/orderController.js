@@ -35,10 +35,31 @@ class OrderController {
       }
   
       await Order.update(updatedOrder, {
-        where: { id }
+        where: { id: id }
       });
   
       return res.json({ message: 'Заказ успешно обновлен' });
+    } catch (err) {
+      console.error(err);
+      return res.status(500).json({ error: 'Ошибка сервера' });
+    }
+  }
+
+  async deleteOrder(req, res) {
+    const { id } = req.params;
+  
+    try {
+      const order = await Order.findByPk(id);
+  
+      if (!order) {
+        return res.status(404).json({ error: 'Заказ не найден' });
+      }
+  
+      await Order.destroy({
+        where: { id: id }
+      });
+  
+      return res.json({ message: 'Заказ успешно удален' });
     } catch (err) {
       console.error(err);
       return res.status(500).json({ error: 'Ошибка сервера' });
