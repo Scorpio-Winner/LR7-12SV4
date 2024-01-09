@@ -4,6 +4,8 @@ import OrdersPage from "../pages/OrdersPage";
 import OrderCreationPage from "../pages/OrderCreationPage";
 import OrderEditionPage from "../pages/OrderEditionPage";
 import ReportPage from "../pages/ReportPage";
+import { publicRoutes } from "./router/publicRoutes";
+import { LOGIN_ROUTE } from "./utils/consts";
 
 const App = () => {
   const [orders, setOrders] = useState([]);
@@ -64,6 +66,19 @@ const App = () => {
     const index = orders.findIndex((order) => order.id === editedOrder.id);
     orders[index] = editedOrder;
   };
+
+
+
+  if (!token) {
+    return (
+        <Routes>
+            {publicRoutes.map(({ path, Component }) => (
+                <Route key={path} path={path} element={<Component />} exact />
+            ))}
+            <Route key="*" path="*" element={<Navigate to={LOGIN_ROUTE} />} />
+        </Routes>
+    );
+}
 
   return (
     <Routes>

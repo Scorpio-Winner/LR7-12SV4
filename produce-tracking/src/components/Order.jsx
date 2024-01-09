@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 import { Typography, Button, Box } from '@mui/material';
@@ -7,6 +7,7 @@ import classes from "../styles/Order.module.css";
 
 const Order = ({ orderData, orderStatuses, detailsHandler, deleteHandler, readonly }) => {
     const router = useNavigate();
+    const [role, setRole] = useState(localStorage.getItem("role"));
 
     return (
         <div className={classes.order}>
@@ -31,7 +32,7 @@ const Order = ({ orderData, orderStatuses, detailsHandler, deleteHandler, readon
                 >
                     Details
                 </Button>
-                {!readonly && <>
+                {!readonly && role === 'admin' && <>
                 <Button
                     variant="outlined"
                     onClick={() => router(`/orders/edit/${orderData.id}`)}

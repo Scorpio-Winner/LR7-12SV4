@@ -1,6 +1,6 @@
 const { Router } = require("express");
-const companyInfoController = require("../controllers/companyInfoController");
-const orderStatusController = require("../controllers/orderStatusController");
+const companyInfoController = require("../controllers/companyinfoController");
+const orderStatusController = require("../controllers/orderstatusController");
 const orderController = require("../controllers/orderController");
 
 

@@ -1,27 +1,35 @@
-const { User, Basket } = require("../models/models");
+const { User } = require("../models/models");
 const bcrypt = require("bcrypt");
 
 class UserController {
 
   async create(req, res) {
+
+    const { email, password } = req.body;
+
     try {
-      const user = { ...req.body };
   
-      if (await User.findOne({ where: { email: user.email } })) {
+      const existingUser = await User.findOne({ where: { email: email } });
+
+      if (existingUser) {
         return res.status(400).json({ error: "Email is taken" });
       }
+      else {
+      const bcryptPassword = await bcrypt.hash(password, 10);
   
-      user.password = await bcrypt.hash(user.password, 10);
-  
-      const createdUser = await User.create(user);
+      const createdUser = await User.create({ 
+        email, 
+        password: bcryptPassword
+      });
   
       return res.status(201).json(createdUser);
+      }
+  
     } catch (err) {
       console.error(err);
       return res.sendStatus(500);
     }
   }  
-
   
 }
 
