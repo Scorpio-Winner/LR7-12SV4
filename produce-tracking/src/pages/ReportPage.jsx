@@ -10,10 +10,12 @@ const ReportPage = ({ orders, orderStatuses, deleteOrder, companyInfo }) => {
   const [modalActive, setModalActive] = useState(false);
   const [modalOrder, setModalOrder] = useState(null);
 
-  const filteredOrders = orders.filter(
-    (order) =>
-      order.creationDate.startsWith('2023') && order.status === 'Complete'
-  );
+  const filteredOrders = {
+    items: orders.items.filter(
+      (order) =>
+        order.creation_date.startsWith('2023') && order.status === 'Complete'
+    ),
+  };
 
   const showOrderDetails = (filteredOrders) => {
     setModalOrder(filteredOrders);

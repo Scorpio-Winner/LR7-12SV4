@@ -7,7 +7,7 @@ import classes from "../styles/Order.module.css";
 
 const Order = ({ orderData, orderStatuses, detailsHandler, deleteHandler, readonly }) => {
     const router = useNavigate();
-    const [role, setRole] = useState(localStorage.getItem("role"));
+    const role = localStorage.getItem("role");
 
     return (
         <div className={classes.order}>

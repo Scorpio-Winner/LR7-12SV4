@@ -13,7 +13,7 @@ const OrderForm = ({ children, orderData, orderStatuses, companyInfo, submitHand
           status: "",
           description: "",
           customer: "",
-          completeTime: "",
+          complete_time: "",
         }
   );
 
@@ -27,10 +27,11 @@ const OrderForm = ({ children, orderData, orderStatuses, companyInfo, submitHand
       status: "",
       description: "",
       customer: "",
-      completeTime: "",
+      complete_time: "",
     });
 
     router("/orders");
+    window.location.reload();
   };
 
   const routeToRouter = (e) => {
@@ -59,7 +60,7 @@ const OrderForm = ({ children, orderData, orderStatuses, companyInfo, submitHand
           label="Status"
         onChange={(e) => setOrder({ ...order, status: e.target.value })}
       >
-        {orderStatuses && orderStatuses.map((status) => (
+        {orderStatuses && orderStatuses.items.map((status) => (
           <MenuItem key={status.id} value={status.name}>
           {status.name}
           </MenuItem>
@@ -79,7 +80,7 @@ const OrderForm = ({ children, orderData, orderStatuses, companyInfo, submitHand
         value={order.customer}
         onChange={(e) => setOrder({ ...order, customer: e.target.value })}
       >
-        {companyInfo && companyInfo.map((customer) => (
+        {companyInfo && companyInfo.items.map((customer) => (
           <MenuItem key={customer.id} value={customer.name}>
             {customer.name}
           </MenuItem>
@@ -90,8 +91,8 @@ const OrderForm = ({ children, orderData, orderStatuses, companyInfo, submitHand
         <TextField
           label="Complete time"
           variant="outlined"
-          value={order.completeTime}
-          onChange={(e) => setOrder({ ...order, completeTime: e.target.value })}
+          value={order.complete_time}
+          onChange={(e) => setOrder({ ...order, complete_time: e.target.value })}
         />
         <TextField
           label="Description"
@@ -103,7 +104,7 @@ const OrderForm = ({ children, orderData, orderStatuses, companyInfo, submitHand
         />
       </div>
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        <Button variant="contained" onClick={submit} sx={{ width: '100%' }}>{children}</Button>
+        <Button variant="contained" onClick={submit} sx={{ width: '100%' }} disabled={!order.title || !order.status || !order.description || !order.customer || !order.complete_time}>{children}</Button>
         <Button variant="contained" onClick={routeToRouter} sx={{ width: '100%' }}>Cancel</Button>
       </Box>
     </form>

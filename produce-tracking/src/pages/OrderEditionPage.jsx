@@ -8,7 +8,7 @@ import classes from "../styles/OrderEditionPage.module.css";
 
 const OrderEditionPage = ({ orders, orderStatuses, editHandler, companyInfo}) => {
     const params = useParams();
-    const orderToEdit = orders.find(
+    const orderToEdit = orders.items.find(
         (order) => order.id === parseInt(params.id)
     );
 

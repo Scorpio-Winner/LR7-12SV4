@@ -3,7 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Box, Link, Toolbar } from '@mui/material';
 
 const Navigation = () => {
-  const [role, setRole] = useState(localStorage.getItem("role"));
+  const role = localStorage.getItem("role");
 
 
   const handleLogout = () => {

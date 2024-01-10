@@ -9,7 +9,7 @@ const OrderDetails = ({ order, orderStatuses, companyInfo }) => {
   };
 
   // Find the corresponding customer information from companyInfo array
-  const customer = companyInfo.find((company) => company.name === order.customer);
+  const customer = companyInfo.items.find((company) => company.name === order.customer);
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>

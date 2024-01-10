@@ -6,85 +6,63 @@ import OrderEditionPage from "../pages/OrderEditionPage";
 import ReportPage from "../pages/ReportPage";
 import { publicRoutes } from "./router/publicRoutes";
 import { LOGIN_ROUTE } from "./utils/consts";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchOrders, createOrder, deleteOrder, updateOrder } from "../redux/slices/order";
+import { fetchOrderStatuses } from "../redux/slices/orderstatus";
+import { fetchCompaniesInfo } from "../redux/slices/companyinfo";
 
 const App = () => {
-  const [orders, setOrders] = useState([]);
-  const [orderStatuses, setOrderStatuses] = useState([]);
-  const [companyInfo, setCompanyInfo] = useState([]);
-  const [token, setToken] = useState(localStorage.getItem("token"));
+  const dispatch = useDispatch();
+  const {orders} = useSelector((state) => state.orders);
+  const {orderStatuses} = useSelector((state) => state.orderStatuses);
+  const {companyInfos} = useSelector((state) => state.companyInfos);
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    loadOrders();
-    loadOrderStatuses();
-    loadCompanyInfo();
-  }, []);
+    dispatch(fetchOrders());
+    dispatch(fetchOrderStatuses());
+    dispatch(fetchCompaniesInfo());
+  }, [dispatch]);
 
-  const loadOrders = async () => {
-    const response = await fetch("./orders.json");
-    const data = await response.json();
-
-    setOrders(data.orders);
-  };
-
-  const loadOrderStatuses = async () => {
-    const response = await fetch("./orderStatuses.json");
-    const data = await response.json();
-
-    setOrderStatuses(data.orderStatuses);
-  };
-
-  const loadCompanyInfo = async () => {
-    const response = await fetch("./companyInfo.json");
-    const data = await response.json();
-
-    setCompanyInfo(data.companyInfo);
-  };
-
-  const createOrder = (orderData) => {
-    var maxId;
-
-    if (orders && orders.length > 0) {
-      maxId = Math.max(...orders.map((order) => order.id));
-    } else {
-      maxId = 0;
-    }
-
+  const handleCreateOrder = (orderData) => {
     const order = {
-      id: maxId + 1,
       ...orderData,
-      creationDate: new Date().toISOString().split("T")[0],
+      creation_date: new Date().toISOString().split("T")[0],
     };
-
-    setOrders([...orders, order]);
+    dispatch(createOrder(order));
   };
 
-  const deleteOrder = (id) => {
-    setOrders(orders.filter((order) => order.id !== id));
+  const handleDeleteOrder = (id) => {
+    dispatch(deleteOrder(id));
+    window.location.reload();
   };
 
-  const editOrder = (editedOrder) => {
-    const index = orders.findIndex((order) => order.id === editedOrder.id);
-    orders[index] = editedOrder;
+  const handleEditOrder = (editedOrder) => {
+    dispatch(updateOrder({ orderId: editedOrder.id, updateData: editedOrder }));
   };
-
-
 
   if (!token) {
     return (
-        <Routes>
-            {publicRoutes.map(({ path, Component }) => (
-                <Route key={path} path={path} element={<Component />} exact />
-            ))}
-            <Route key="*" path="*" element={<Navigate to={LOGIN_ROUTE} />} />
-        </Routes>
+      <Routes>
+        {publicRoutes.map(({ path, Component }) => (
+          <Route key={path} path={path} element={<Component />} exact />
+        ))}
+        <Route key="*" path="*" element={<Navigate to={LOGIN_ROUTE} />} />
+      </Routes>
     );
-}
+  }
 
   return (
     <Routes>
       <Route
         path="/orders/create"
-        element={<OrderCreationPage creationHandler={createOrder} orderStatuses={orderStatuses} companyInfo={companyInfo}/>}
+        element={
+          <OrderCreationPage
+            creationHandler={handleCreateOrder}
+            orderStatuses={orderStatuses}
+            companyInfo={companyInfos}
+          />
+        }
       />
       <Route
         path="/orders/edit/:id"
@@ -92,8 +70,8 @@ const App = () => {
           <OrderEditionPage
             orders={orders}
             orderStatuses={orderStatuses}
-            companyInfo={companyInfo}
-            editHandler={editOrder}
+            companyInfo={companyInfos}
+            editHandler={handleEditOrder}
           />
         }
       />
@@ -103,8 +81,8 @@ const App = () => {
           <OrdersPage
             orders={orders}
             orderStatuses={orderStatuses}
-            companyInfo={companyInfo}
-            deleteOrder={deleteOrder}
+            companyInfo={companyInfos}
+            deleteOrder={handleDeleteOrder}
           />
         }
       />
@@ -114,8 +92,8 @@ const App = () => {
           <ReportPage
             orders={orders}
             orderStatuses={orderStatuses}
-            companyInfo={companyInfo}
-            deleteOrder={deleteOrder}
+            companyInfo={companyInfos}
+            deleteOrder={handleDeleteOrder}
           />
         }
       />

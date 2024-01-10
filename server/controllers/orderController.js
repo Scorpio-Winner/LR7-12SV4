@@ -28,7 +28,7 @@ class OrderController {
     const updatedOrder = { ...req.body };
   
     try {
-      const order = await Order.findByPk(id);
+      const order = await Order.findOne({ where: { id: id } });;
   
       if (!order) {
         return res.status(404).json({ error: 'Заказ не найден' });
@@ -49,7 +49,7 @@ class OrderController {
     const { id } = req.params;
   
     try {
-      const order = await Order.findByPk(id);
+      const order = await Order.findOne({ where: { id: id } });;
   
       if (!order) {
         return res.status(404).json({ error: 'Заказ не найден' });
