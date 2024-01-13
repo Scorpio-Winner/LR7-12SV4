@@ -24,10 +24,10 @@ const OrderDetails = ({ order, orderStatuses, companyInfo }) => {
           <b>Status:</b> {order.status}
         </Typography>
         <Typography variant="body1" sx={{ width: '450px', fontSize: '18px' }}>
-          <b>Creation date:</b> {order.creationDate}
+          <b>Creation date:</b> {order.creation_date}
         </Typography>
         <Typography variant="body1" sx={{ width: '450px', fontSize: '18px' }}>
-          <b>Complete time:</b> {order.completeTime}
+          <b>Complete time:</b> {order.complete_time}
         </Typography>
         <Typography variant="body1" sx={{ width: '450px', fontSize: '18px' }}>
           <b>Description:</b><br />
@@ -45,7 +45,7 @@ const OrderDetails = ({ order, orderStatuses, companyInfo }) => {
               <b>Location:</b> {customer.location}
             </Typography>
             <Typography variant="body1" sx={{ width: '450px', fontSize: '18px' }}>
-              <b>Established Year:</b> {customer.establishedYear}
+              <b>Established Year:</b> {customer.established_year}
             </Typography>
             <Typography variant="body1" sx={{ width: '450px', fontSize: '18px' }}>
               <b>Industry:</b> {customer.industry}
