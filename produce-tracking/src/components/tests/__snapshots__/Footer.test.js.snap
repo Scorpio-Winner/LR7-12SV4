@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`get GitHub link 1`] = `
+<a
+  class="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-9su0rk-MuiTypography-root-MuiLink-root"
+  href="https://github.com/Scorpio-Winner"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  GitHub
+</a>
+`;
+
+exports[`get current year 1`] = `
+<p
+  class="MuiTypography-root MuiTypography-body2 css-1k9vj65-MuiTypography-root"
+>
+  © 2023
+</p>
+`;

@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OrderDetails matches the snapshot 1`] = `
+<div
+  className="MuiBox-root css-4p9vrj"
+>
+  <h2
+    className="MuiTypography-root MuiTypography-h2 css-acoteq-MuiTypography-root"
+  >
+    Test Order
+  </h2>
+  <div
+    className="MuiBox-root css-bco1gb"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Id:
+      </b>
+       
+      1
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Status:
+      </b>
+       
+      Pending
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Creation date:
+      </b>
+       
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Complete time:
+      </b>
+       
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Description:
+      </b>
+      <br />
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Customer:
+      </b>
+       
+    </p>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Show Customer Details
+    </button>
+  </div>
+</div>
+`;
+
+exports[`OrderDetails matches the snapshot when customer details are shown 1`] = `
+<div
+  className="MuiBox-root css-4p9vrj"
+>
+  <h2
+    className="MuiTypography-root MuiTypography-h2 css-acoteq-MuiTypography-root"
+  >
+    Test Order
+  </h2>
+  <div
+    className="MuiBox-root css-bco1gb"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Id:
+      </b>
+       
+      1
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Status:
+      </b>
+       
+      Pending
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Creation date:
+      </b>
+       
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Complete time:
+      </b>
+       
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Description:
+      </b>
+      <br />
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-11nzmzd-MuiTypography-root"
+    >
+      <b>
+        Customer:
+      </b>
+       
+    </p>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium css-1rwt2y5-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Show Customer Details
+      <span
+        className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</div>
+`;

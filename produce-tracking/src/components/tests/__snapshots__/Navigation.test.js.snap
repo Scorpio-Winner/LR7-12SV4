@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation renders correctly for admin role 1`] = `
+<div
+  className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+>
+  <div
+    className="MuiBox-root css-i9gxme"
+  >
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      href="/orders"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      All orders
+    </a>
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      href="/orders/create"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Create order
+    </a>
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      href="/report"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Report
+    </a>
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Logout
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Navigation renders correctly for non-admin role 1`] = `
+<div
+  className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+>
+  <div
+    className="MuiBox-root css-i9gxme"
+  >
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      href="/orders"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      All orders
+    </a>
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      href="/report"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Report
+    </a>
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Logout
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Navigation renders correctly when role is not set 1`] = `
+<div
+  className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+>
+  <div
+    className="MuiBox-root css-i9gxme"
+  >
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      href="/orders"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      All orders
+    </a>
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      href="/report"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Report
+    </a>
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Logout
+    </a>
+  </div>
+</div>
+`;
+
+exports[`Navigation renders correctly when role is null 1`] = `
+<div
+  className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-hyum1k-MuiToolbar-root"
+>
+  <div
+    className="MuiBox-root css-i9gxme"
+  >
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      href="/orders"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      All orders
+    </a>
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      href="/report"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Report
+    </a>
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineNone css-1n54ss-MuiTypography-root-MuiLink-root"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      Logout
+    </a>
+  </div>
+</div>
+`;
